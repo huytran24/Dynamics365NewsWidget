@@ -10,6 +10,9 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
+    "categories": [
+        "Collaborate"
+    ],
     "icons": {
         "default": "img/logo.png"
     },
@@ -23,8 +26,8 @@
             "properties": {
                 "name": "Dynamics CRM news widget",
                 "description": "Dynamics CRM news widget",
-                "catalogIconUrl": "img/Catalog.png",
-                "previewImageUrl": "img/preview.png",                            
+                "catalogIconUrl": "img/logo.png",
+                "previewImageUrl": "img/logo.png",                            
                 "uri": "index.html",
                 "supportedSizes": [
                      {
