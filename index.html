@@ -10,12 +10,14 @@
     
             VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
                 WidgetHelpers.IncludeWidgetStyles();
+                WidgetHelpers.IncludeWidgetConfigurationStyles();
+
                 VSS.register("DynamicsCrmNewsWidget", function () {                
                     return {
                         load: function (widgetSettings) {
-                            var $title = $('h2.title');
-                            $title.text('Hello World');
-    
+                            // init
+
+
                             return WidgetHelpers.WidgetStatusHelper.Success();
                         }
                     }
@@ -27,7 +29,18 @@
     </head>
     <body>
         <div class="widget">
-            <h2 class="title"></h2>
+            <h2 class="title">Dynamics CRM News</h2>
+
+            <div class="content">
+
+                <a href="http://bing.com" target="_blank">
+                    <div class="title">
+                        Primary link text
+                        <div class="subtitle">Link subtext</div>
+                    </div>
+                </a>  
+
+            </div>
         </div>
     </body>
 </html>
