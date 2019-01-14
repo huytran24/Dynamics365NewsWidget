@@ -1,2 +1,2 @@
-# crm-news-widget
-A AzureDevOps widget that displays news on Dynamcis CRM.
+# Dynamics CRM news AzureDevOps widget
+A Azure DevOps widget that displays news on Dynamcis CRM.
