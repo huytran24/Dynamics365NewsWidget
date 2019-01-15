@@ -1,75 +1,94 @@
 <!DOCTYPE html>
 <html>
-    <head>          
-        <script src="scripts/VSS.SDK.min.js"></script>
-        <script type="text/javascript">
-            VSS.init({                        
-                explicitNotifyLoaded: true,
-                usePlatformStyles: true
-            });
-    
-            VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
-                WidgetHelpers.IncludeWidgetStyles();
-                WidgetHelpers.IncludeWidgetConfigurationStyles();
 
-                VSS.register("DynamicsCrmNewsWidget", function () {                
-                    return {
-                        load: function (widgetSettings) {
-                            // init
+<head>
+    <style>
+        .middle > *
+            {
+                vertical-align: middle;
+            }
+        </style>
+    <script src="scripts/VSS.SDK.min.js"></script>
+    <script type="text/javascript">
+        VSS.init({
+            explicitNotifyLoaded: true,
+            usePlatformStyles: true
+        });
 
+        VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
+            WidgetHelpers.IncludeWidgetStyles();
+            WidgetHelpers.IncludeWidgetConfigurationStyles();
 
-                            return WidgetHelpers.WidgetStatusHelper.Success();
-                        }
+            VSS.register("DynamicsCrmNewsWidget", function () {
+                return {
+                    load: function (widgetSettings) {
+                        // Set your title
+                        var $title = $('h2.title');
+                        $title.text('Hello World');
+
+                        return getQueryInfo(widgetSettings);
+                    },
+                    reload: function (widgetSettings) {
+                        return getQueryInfo(widgetSettings);
                     }
-                });
-                VSS.notifyLoadSucceeded();
+                }
             });
-        </script>
-        
-    </head>
-    <body>
-        <div class="widget">
-            <h2 class="title"><img width="30" src="https://www.techsoup.org/SiteCollectionImages/Product/prod-microsoft-dynamics-365-logo_Big.png" />
-                Dynamics CRM News</h2>
+            VSS.notifyLoadSucceeded();
+        });
+    </script>
 
-            <div class="content">
+</head>
 
-                <a href="http://bing.com" target="_blank">
-                    <div class="title">
-                        Primary link text
-                        <div class="subtitle">Link subtext</div>
-                    </div>
-                </a>
-                
-                <a href="http://bing.com" target="_blank">
-                    <div class="title">
-                        Primary link text
-                        <div class="subtitle">Link subtext</div>
-                    </div>
-                </a>  
-                
-                <a href="http://bing.com" target="_blank">
-                    <div class="title">
-                        Primary link text
-                        <div class="subtitle">Link subtext</div>
-                    </div>
-                </a>  
+<body>
+    <div class="widget">
 
-                <a href="http://bing.com" target="_blank">
-                    <div class="title">
-                        Primary link text
-                        <div class="subtitle">Link subtext</div>
-                    </div>
-                </a>  
+        <div class="middle">
 
-                <a href="http://bing.com" target="_blank">
-                    <div class="title">
-                        Primary link text
-                        <div class="subtitle">Link subtext</div>
-                    </div>
-                </a>  
+            <img src="img/Dynamics-365-logo.png" />
+            <h2 class="title">Dynamics 365 news</h2>
 
-            </div>
         </div>
-    </body>
+
+
+        <div class="content">
+
+            <a href="http://bing.com" target="_blank">
+                <div class="title">
+                    Primary link text
+                    <div class="subtitle">Link subtext</div>
+                </div>
+            </a>
+
+            <a href="http://bing.com" target="_blank">
+                <div class="title">
+                    Primary link text
+                    <div class="subtitle">Link subtext</div>
+                </div>
+            </a>
+
+            <a href="http://bing.com" target="_blank">
+                <div class="title">
+                    Primary link text
+                    <div class="subtitle">Link subtext</div>
+                </div>
+            </a>
+
+            <a href="http://bing.com" target="_blank">
+                <div class="title">
+                    Primary link text
+                    <div class="subtitle">Link subtext</div>
+                </div>
+            </a>
+
+            <a href="http://bing.com" target="_blank">
+                <div class="title">
+                    Primary link text
+                    <div class="subtitle">Link subtext</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</body>
+
 </html>
