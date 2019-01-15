@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>                          
+        <script src="scripts/VSS.SDK.min.js"></script>
+        <script type="text/javascript">
+            VSS.init({                        
+                explicitNotifyLoaded: true,
+                usePlatformStyles: true
+            });
+    
+            VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
+                VSS.register("DynamicsCrmNewsWidget.Configuration", function () {   
+    
+                    return {
+                        load: function (widgetSettings, widgetConfigurationContext) {
+
+    
+                            return WidgetHelpers.WidgetStatusHelper.Success();
+                        },
+                        onSave: function() {
+                            var customSettings = {
+                                
+                            };
+                            return WidgetHelpers.WidgetConfigurationSave.Valid(customSettings); 
+                        }
+                    }
+                });
+                VSS.notifyLoadSucceeded();
+            });
+        </script>
+                  
+    </head>
+    <body>
+        <div class="container">
+        </div>
+    </body>
+</html>

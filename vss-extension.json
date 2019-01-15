@@ -1,8 +1,8 @@
 {
     "manifestVersion": 1,
     "id": "dynamics-crm-news-widget",
-    "version": "1.0.9",
-    "name": "Dynamics CRM news widget",
+    "version": "1.0.15",
+    "name": "Dynamics 365 news",
     "description": "Widget to display Dynamics CRM news",
     "publisher": "HuyTran86",
     "targets": [
@@ -21,7 +21,8 @@
             "id": "DynamicsCrmNewsWidget",
             "type": "ms.vss-dashboards-web.widget",
             "targets": [
-                "ms.vss-dashboards-web.widget-catalog"
+                "ms.vss-dashboards-web.widget-catalog",
+                "huyTran86.dynamics-crm-news-widget.DynamicsCrmNewsWidget.Configuration"
             ],
             "properties": {
                 "name": "Dynamics CRM news widget",
@@ -37,7 +38,18 @@
                     ],
                 "supportedScopes": ["project_team"]
             }
+        },
+        {
+            "id": "DynamicsCrmNewsWidget.Configuration",
+            "type": "ms.vss-dashboards-web.widget-configuration",
+            "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
+            "properties": {
+                "name": "DynamicsCrmNewsWidget Configuration",
+                "description": "Configures DynamicsCrmNewsWidget",
+                "uri": "configuration.html"
+            }
         }
+
     ],
     "files": [
         {
@@ -46,6 +58,9 @@
         {
             "path": "scripts", "addressable": true
         },
+        {
+            "path": "configuration.html", "addressable": true
+        },        
         {
             "path": "img", "addressable": true
         }
