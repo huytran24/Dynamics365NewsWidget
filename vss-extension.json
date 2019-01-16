@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1,
-    "id": "dynamics-crm-news-widget",
-    "version": "1.0.16",
+    "id": "dynamics365-news-widget",
+    "version": "1.0.29",
     "name": "Dynamics 365 news",
-    "description": "Widget to display Dynamics CRM news",
+    "description": "Widget to display Dynamics 365 news",
     "publisher": "HuyTran86",
     "targets": [
         {
@@ -18,58 +18,62 @@
     },
     "contributions": [
         {
-            "id": "DynamicsCrmNewsWidget",
+            "id": "Dynamics365NewsWidget",
             "type": "ms.vss-dashboards-web.widget",
             "targets": [
                 "ms.vss-dashboards-web.widget-catalog",
-                "huyTran86.dynamics-crm-news-widget.DynamicsCrmNewsWidget.Configuration"
+                "HuyTran86.dynamics365-news-widget.Dynamics365NewsWidget.Configuration"
             ],
             "properties": {
-                "name": "Dynamics CRM news widget",
-                "description": "Dynamics CRM news widget",
+                "name": "Dynamics 365 news widget",
+                "description": "Dynamics 365 news widget",
                 "catalogIconUrl": "img/logo.png",
-                "previewImageUrl": "img/logo.png",                            
+                "previewImageUrl": "img/logo.png",
                 "uri": "index.html",
                 "supportedSizes": [
-                     {
-                            "rowSpan": 2,
-                            "columnSpan": 2
-                        },
-                        {
-                            "rowSpan": 1,
-                            "columnSpan": 1
-                        }
-                    ],
-                "supportedScopes": ["project_team"]
+                    {
+                        "rowSpan": 2,
+                        "columnSpan": 2
+                    },
+                    {
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    }
+                ],
+                "supportedScopes": [
+                    "project_team"
+                ]
             }
         },
         {
-            "id": "DynamicsCrmNewsWidget.Configuration",
+            "id": "Dynamics365NewsWidget.Configuration",
             "type": "ms.vss-dashboards-web.widget-configuration",
-            "targets": [ "ms.vss-dashboards-web.widget-configuration" ],
+            "targets": [
+                "ms.vss-dashboards-web.widget-configuration"
+            ],
             "properties": {
-                "name": "DynamicsCrmNewsWidget Configuration",
-                "description": "Configures DynamicsCrmNewsWidget",
+                "name": "Dynamics365NewsWidget Configuration",
+                "description": "Configures Dynamics365NewsWidget",
                 "uri": "configuration.html"
             }
         }
-
     ],
     "files": [
         {
-            "path": "index.html", "addressable": true
+            "path": "index.html",
+            "addressable": true
         },
         {
-            "path": "configuration.html", "addressable": true
-        },        
-        {
-            "path": "scripts", "addressable": true
+            "path": "scripts",
+            "addressable": true
         },
         {
-            "path": "configuration.html", "addressable": true
-        },        
+            "path": "configuration.html",
+            "addressable": true
+        },
         {
-            "path": "img", "addressable": true
+            "path": "img",
+            "addressable": true
         }
     ]
 }

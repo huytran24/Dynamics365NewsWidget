@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <script src="scripts/VSS.SDK.min.js"></script>
@@ -13,17 +13,17 @@
             WidgetHelpers.IncludeWidgetStyles();
             WidgetHelpers.IncludeWidgetConfigurationStyles();
 
-            VSS.register("DynamicsCrmNewsWidget", function () {
+            VSS.register("Dynamics365NewsWidget", function () {
                 return {
                     load: function (widgetSettings) {
-                        // Set your title
-                        var $title = $('h2.title');
-                        $title.text('Hello World');
+
+                        console.log(widgetSettings);
 
                         return WidgetHelpers.WidgetStatusHelper.Success();
                     },
                     reload: function (widgetSettings) {
                         // init
+                        console.log(widgetSettings);
 
                         return WidgetHelpers.WidgetStatusHelper.Success();
                     }
