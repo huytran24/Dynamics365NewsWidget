@@ -2,12 +2,6 @@
 <html>
 
 <head>
-    <style>
-        .middle > *
-            {
-                vertical-align: middle;
-            }
-        </style>
     <script src="scripts/VSS.SDK.min.js"></script>
     <script type="text/javascript">
         VSS.init({
@@ -26,10 +20,12 @@
                         var $title = $('h2.title');
                         $title.text('Hello World');
 
-                        return getQueryInfo(widgetSettings);
+                        return WidgetHelpers.WidgetStatusHelper.Success();
                     },
                     reload: function (widgetSettings) {
-                        return getQueryInfo(widgetSettings);
+                        // init
+
+                        return WidgetHelpers.WidgetStatusHelper.Success();
                     }
                 }
             });
@@ -42,13 +38,12 @@
 <body>
     <div class="widget">
 
-        <div class="middle">
-
-            <img src="img/Dynamics-365-logo.png" />
-            <h2 class="title">Dynamics 365 news</h2>
+        <div class="middle" style="display: inline-block;">
+            <img width="20" src="img/Dynamics-365.png" style="float:left" />
+            <h2 class="title" style="padding-left:15px; padding-top:4px">
+                Dynamics 365 news</h2>
 
         </div>
-
 
         <div class="content">
 
