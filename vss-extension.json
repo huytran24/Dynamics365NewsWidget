@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "dynamics365-news-widget",
-    "version": "1.0.29",
+    "version": "1.0.0.1",
     "name": "Dynamics 365 news",
     "description": "Widget to display Dynamics 365 news",
     "publisher": "HuyTran86",

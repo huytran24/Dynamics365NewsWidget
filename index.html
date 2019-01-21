@@ -3,11 +3,14 @@
 
 <head>
     <script src="scripts/VSS.SDK.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <script type="text/javascript">
         VSS.init({
             explicitNotifyLoaded: true,
             usePlatformStyles: true
         });
+
 
         VSS.require("TFS/Dashboards/WidgetHelpers", function (WidgetHelpers) {
             WidgetHelpers.IncludeWidgetStyles();
@@ -16,6 +19,13 @@
             VSS.register("Dynamics365NewsWidget", function () {
                 return {
                     load: function (widgetSettings) {
+
+                        var app = new Vue({
+                            el: '#app',
+                            data: {
+                                items: [{ link: "", title: "test", description: "blah" }]
+                            }
+                        });
 
                         console.log(widgetSettings);
 
@@ -36,7 +46,7 @@
 </head>
 
 <body>
-    <div class="widget">
+    <div class="widget" id="app">
 
         <div class="middle" style="display: inline-block;">
             <img width="20" src="img/Dynamics-365.png" style="float:left" />
@@ -46,41 +56,16 @@
         </div>
 
         <div class="content">
-
-            <a href="http://bing.com" target="_blank">
-                <div class="title">
-                    Primary link text
-                    <div class="subtitle">Link subtext</div>
-                </div>
-            </a>
-
-            <a href="http://bing.com" target="_blank">
-                <div class="title">
-                    Primary link text
-                    <div class="subtitle">Link subtext</div>
-                </div>
-            </a>
-
-            <a href="http://bing.com" target="_blank">
-                <div class="title">
-                    Primary link text
-                    <div class="subtitle">Link subtext</div>
-                </div>
-            </a>
-
-            <a href="http://bing.com" target="_blank">
-                <div class="title">
-                    Primary link text
-                    <div class="subtitle">Link subtext</div>
-                </div>
-            </a>
-
-            <a href="http://bing.com" target="_blank">
-                <div class="title">
-                    Primary link text
-                    <div class="subtitle">Link subtext</div>
-                </div>
-            </a>
+            <ul class="no-bullets">
+                <li v-for="item in items">
+                    <a href="{{ item.link }}" target="_blank">
+                        <div class="title">
+                            {{ item.title }}
+                            <div class="subtitle">{{ item.description }}</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
 
         </div>
     </div>
