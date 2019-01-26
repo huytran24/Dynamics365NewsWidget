@@ -6,15 +6,18 @@ const feedUrls = ["https://www.inogic.com/blog/feed/", "http://crmaudio.libsyn.c
 http.createServer(function (req, httpResponse) {
     httpResponse.writeHead(200, { 'Content-Type': 'text/json' });
 
-    const promises = urls.map(url => request(url));
+    const promises = feedUrls.map(url => request(url));
     Promise.all(promises).then((data) => {
-        // data = [promise1,promise2]
-        var body1 = data[0]; 
-        parseString(body1, function (err, result) {
-    
-    
+        // data = [promise1, promise1, etc]
+        var resultXml = '';
+        for (var i = 0; i < data.length; i++) {
+            resultXml = resultXml + data[i]; // this is the xml response
+        }
+
+        parseString(resultXml, function (err, result) {
             httpResponse.end(JSON.stringify(result));
         });
+
     });
 
 }).listen(8080);
