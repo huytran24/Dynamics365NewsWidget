@@ -1,17 +1,20 @@
 var http = require('http');
-var request = require('request');
+var request = require('request-promise');
 var parseString = require('xml2js').parseString;
+const feedUrls = ["https://www.inogic.com/blog/feed/", "http://crmaudio.libsyn.com/CRM", "https://www.engineeredcode.com/feed"];
 
 http.createServer(function (req, httpResponse) {
     httpResponse.writeHead(200, { 'Content-Type': 'text/json' });
 
-    request('https://feedforall.com/sample.xml', { json: true }, (err, res, body) => {
-
-        if (err) { return console.log(err); }
-        parseString(body, function (err, result) {
-
-
+    const promises = urls.map(url => request(url));
+    Promise.all(promises).then((data) => {
+        // data = [promise1,promise2]
+        var body1 = data[0]; 
+        parseString(body1, function (err, result) {
+    
+    
             httpResponse.end(JSON.stringify(result));
         });
     });
+
 }).listen(8080);
